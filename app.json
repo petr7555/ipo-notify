@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "ipo-notify",
+    "name": "IPO Notify",
     "slug": "ipo-notify",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,16 +19,22 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.petrjanik.iponotify"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.petrjanik.iponotify",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-notifications"
+    ]
   }
 }
