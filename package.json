@@ -8,7 +8,7 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "lint": "eslint './src/**/*.{js,jsx,ts,tsx}' && prettier './src/**/*.{js,jsx,ts,tsx}' --check"
   },
   "jest": {
