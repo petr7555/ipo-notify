@@ -1,5 +1,5 @@
-import * as functions from 'firebase-functions';
 import axios from 'axios';
+import * as functions from 'firebase-functions';
 
 const WEATHER_API_KEY = functions.config().weatherapi.key;
 
@@ -8,7 +8,7 @@ const WEATHER_API_KEY = functions.config().weatherapi.key;
 const getWeatherData = async (city: string) => {
   try {
     const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${WEATHER_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${WEATHER_API_KEY}`
     );
     const data = response.data;
     return {
@@ -20,7 +20,7 @@ const getWeatherData = async (city: string) => {
       windSpeed: data.wind.speed,
     };
   } catch (e) {
-    console.error('Couldn\'t get weather data:', e);
+    console.error("Couldn't get weather data:", e);
   }
 };
 

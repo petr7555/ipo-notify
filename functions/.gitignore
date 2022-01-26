@@ -8,5 +8,9 @@ typings/
 # Node.js dependency directory
 node_modules/
 
+# Logs
+firebase-debug.log
+ui-debug.log
+
 # Keys
 .runtimeconfig.json

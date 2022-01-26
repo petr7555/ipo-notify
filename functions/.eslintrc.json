@@ -1,0 +1,6 @@
+{
+  "ignorePatterns": [
+    "/lib/**/*"
+    // Ignore built files.
+  ]
+}

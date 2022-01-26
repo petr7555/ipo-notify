@@ -1,4 +1,5 @@
-import {Expo, ExpoPushMessage} from 'expo-server-sdk';
+import { Expo, ExpoPushMessage } from 'expo-server-sdk';
+
 import getWeatherData from './getWeatherData';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -20,7 +21,7 @@ const sendPushNotifications = async (pushTokens: string[]) => {
     } catch (e) {
       console.error('Cannot sendPushNotificationsAsync:', e);
     }
-  /* Note that expo.sendPushNotificationsAsync will not send the push notifications
+    /* Note that expo.sendPushNotificationsAsync will not send the push notifications
      * to the user immediately but will send the information to Expo notifications
      * service instead, which will later send the notifications to the users */
   }
