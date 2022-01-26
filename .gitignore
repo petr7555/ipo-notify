@@ -74,6 +74,8 @@ dist/
 
 # @end expo-cli
 
+# Tests
+coverage
+
 # Keys
 google-services.json
- 
