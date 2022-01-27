@@ -27,7 +27,6 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.petrjanik.iponotify",
       "googleServicesFile": "./google-services.json"
     },
     "web": {
