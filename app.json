@@ -2,7 +2,7 @@
   "expo": {
     "name": "IPO Notify",
     "slug": "ipo-notify",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -20,14 +20,16 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.petrjanik.iponotify"
+      "bundleIdentifier": "com.petrjanik.iponotify",
+      "buildNumber": "0.1.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "googleServicesFile": "./google-services.json"
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 440000100
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
