@@ -1,7 +1,7 @@
 {
   "name": "ipo-notify",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "expo start",
     "android": "expo run:android",
@@ -9,7 +9,9 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "test": "jest --passWithNoTests",
-    "lint": "eslint './src/**/*.{js,jsx,ts,tsx}' && prettier './src/**/*.{js,jsx,ts,tsx}' --check"
+    "lint": "eslint './src/**/*.{js,jsx,ts,tsx}' && prettier './src/**/*.{js,jsx,ts,tsx}' --check",
+    "build": "eas build -p android --profile production",
+    "build:preview": "eas build -p android --profile preview"
   },
   "jest": {
     "preset": "jest-expo"
@@ -51,6 +53,8 @@
     "jest-expo": "~44.0.1",
     "prettier": "^2.5.1",
     "react-test-renderer": "17.0.1",
+    "standard-version": "^7.1.0",
+    "standard-version-expo": "^1.0.3",
     "typescript": "~4.3.5"
   }
 }
