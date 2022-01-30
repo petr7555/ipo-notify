@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "594641318260",
+    "project_id": "ipo-notify-4b5c1",
+    "storage_bucket": "ipo-notify-4b5c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594641318260:android:6ccf0ca13316addfb7fc21",
+        "android_client_info": {
+          "package_name": "com.petrjanik.iponotify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594641318260-1c6ruh4i0h3k6dhbpif53pkgd48fdd9c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMnSRrL7gCpBzYWj9DZ56osNaxpX9Untw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594641318260-1c6ruh4i0h3k6dhbpif53pkgd48fdd9c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
