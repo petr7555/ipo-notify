@@ -1,6 +1,5 @@
 {
   "name": "functions",
-  "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",
