@@ -43,4 +43,4 @@ jobs:
         uses: codecov/codecov-action@v1
 
       - name: Build apk
-        run: npx eas-cli build --platform android --profile preview
+        run: npx eas-cli build --platform android --profile preview --non-interactive
