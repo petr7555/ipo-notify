@@ -1,4 +1,4 @@
-name: Lint and test
+name: Build
 
 on:
   push:
@@ -11,14 +11,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  lint_and_test:
-    name: Lint and test
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [ 16 ]
-
+        
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: 🏗 Checkout repository
@@ -30,14 +30,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
 
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v7
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
       - name: 📦 Install dependencies
         run: yarn install
 
-      - name: ✨ Lint
-        run: yarn lint
-
-      - name: ✅ Run tests and generate coverage report
-        run: yarn test --coverage
-
-      - name: ⬆️ Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
+      - name: 🚀 Build app
+        run: eas build --non-interactive --platform android --profile preview

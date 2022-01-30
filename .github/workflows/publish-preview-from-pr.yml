@@ -1,24 +1,20 @@
-name: Lint and test
+name: Publish a preview from PR
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [pull_request]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  lint_and_test:
-    name: Lint and test
+  publish:
+    name: Publish a preview from PR
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [ 16 ]
-
+        
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: 🏗 Checkout repository
@@ -30,14 +26,19 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
 
+      - name: 🏗 Setup Expo
+        uses: expo/expo-github-action@v7
+        with:
+          expo-version: 5.x
+          token: ${{ secrets.EXPO_TOKEN }}
+
       - name: 📦 Install dependencies
         run: yarn install
 
-      - name: ✨ Lint
-        run: yarn lint
+      - name: 🚀 Publish preview
+        run: expo publish --release-channel=pr-${{ github.event.number }} --non-interactive --platform android
 
-      - name: ✅ Run tests and generate coverage report
-        run: yarn test --coverage
-
-      - name: ⬆️ Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
+      - name: 💬 Comment preview
+        uses: expo/expo-github-action/preview-comment@v7
+        with:
+          channel: pr-${{ github.event.number }}
