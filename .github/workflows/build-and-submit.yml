@@ -1,4 +1,4 @@
-name: Build
+name: Build and submit
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
-    name: Build
+    name: Build and submit
     runs-on: ubuntu-latest
 
     strategy:
@@ -38,5 +38,8 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install
 
-      - name: 🚀 Build app
-        run: eas build --non-interactive --platform android --profile preview
+#      - name: Increment version
+#        run: npx standard-version --release-as patch
+        
+      - name: 🚀 Build app and submit
+        run: eas build --non-interactive --platform android
