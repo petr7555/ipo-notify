@@ -10,3 +10,4 @@ TODO badges https://shields.io/category/version
 ![GitHub Release Date](https://img.shields.io/github/release-date/petr7555/ipo-notify/)
 
 ## IPO Notify
+trigger ci
