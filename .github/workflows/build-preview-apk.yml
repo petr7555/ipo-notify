@@ -1,12 +1,13 @@
-name: Build and submit
+name: Build preview apk
 
 on:
   push:
-    branches: [ master ]
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
-    name: Build and submit
+    name: Build preview apk
     runs-on: ubuntu-latest
 
     strategy:
@@ -32,8 +33,5 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install
 
-#      - name: Increment version
-#        run: npx standard-version --release-as patch
-#        
-#      - name: 🚀 Build app and submit
-#        run: eas build --non-interactive --platform android --auto-submit
+      - name: 🚀 Build app
+        run: eas build --non-interactive --platform android --profile preview

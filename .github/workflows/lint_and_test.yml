@@ -2,13 +2,9 @@ name: Lint and test
 
 on:
   push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   lint_and_test:
     name: Lint and test
@@ -18,7 +14,6 @@ jobs:
       matrix:
         node-version: [ 16 ]
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: 🏗 Checkout repository
         uses: actions/checkout@v2
